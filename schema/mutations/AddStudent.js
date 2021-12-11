@@ -9,7 +9,7 @@ const StatusType = require('../typeDevs/StatusType');
 var orderModal = require("../../orders/OrdersModal");
 
 module.exports.ADD_STUDENT = {
-    type: UserType ,
+    type: StatusType ,
     args: {
         name: { type: GraphQLString},
         rollno:{type: GraphQLInt} ,
@@ -32,7 +32,7 @@ module.exports.ADD_STUDENT = {
             console.log("err", err);
           });
 
-        return args
+        return { success: true ,  message: 'Added Successfully' , error: ''}
     }
 }
 
