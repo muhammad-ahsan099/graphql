@@ -4,7 +4,9 @@ var cors = require("cors");
 var bodyParser = require("body-parser")
 var dbConnection = require("./config/Db");
 
-const PORT = 5000 
+// const PORT = 5000 
+const port = process.env.PORT || 5000;
+
 const { graphqlHTTP } = require('express-graphql');
 
 const app = express();
@@ -56,11 +58,11 @@ app.get("/", function (req, res) {
   });
   
   
-  app.listen(PORT , (err) => {
+  app.listen(port , (err) => {
     if (err) {
       console.log("something went wrong", error);
     } else {
-        console.log(`App is Running on Port ${PORT}`);
+        console.log(`App is Running on Port ${port}`);
     }
   });
 
