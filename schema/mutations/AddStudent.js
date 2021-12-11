@@ -38,7 +38,7 @@ module.exports.ADD_STUDENT = {
 
 
 module.exports.UPDATE_STUDENT = {
-    type: UserType ,
+    type: StatusType ,
     args: {
         id: {type: GraphQLString } ,
         name: { type: GraphQLString},
@@ -68,14 +68,11 @@ module.exports.UPDATE_STUDENT = {
             (err, data) => {
               console.log("Data is Updated...success:", data);
               console.log("err", err);
-            //   if (err) {
-            //     res.send("err happen");
-            //   }
-            //   res.json(data);
+            
             }
           );
 
-        return args
+          return { success: true ,  message: 'Updated Successfully' , error: ''}
     }
 }
 
